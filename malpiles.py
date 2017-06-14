@@ -4,6 +4,8 @@ import csv
 import random
 import math
 import operator
+import sys
+import os
 
 def load_dataset(filename, split, trainingSet=[] , testSet=[]):
 	with open(filename, 'rb') as csvfile:
@@ -55,10 +57,19 @@ def get_accuracy(testSet, predictions):
 	return (correct/float(len(testSet))) * 100.0
 	
 def main():
+
+	if len(sys.argv) < 2:
+		print "python malpiles.py dataset.csv"
+		exit()
+
+	if os.path.isfile(sys.argv[1]) == False:	
+		print "%s is not valid file path." % sys.argv[1]
+		exit()
+
 	trainingSet=[]
 	testSet=[]
 	split = 0.67
-	load_dataset('output.csv', split, trainingSet, testSet)
+	load_dataset(sys.argv[1], split, trainingSet, testSet)
 	print 'Train set: ' + repr(len(trainingSet))
 	print 'Test set: ' + repr(len(testSet))
 

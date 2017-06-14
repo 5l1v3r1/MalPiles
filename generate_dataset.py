@@ -119,9 +119,8 @@ def parse_file(pe, filepath):
 	longest_ascii_string = get_longest_ascii_string(entire_pe_data)
 	longest_ascii_string_entropy = calculate_ascii_entropy(longest_ascii_string)
 	print "Longest string entropy %.2f" % longest_ascii_string_entropy
-	
-	return [str(round(code_section_data_entropy, 2)), str(round(code_section_data_entropy, 2)),
-			str(round(entire_pe_data_entropy, 2)), str(round(entire_pe_data_entropy, 2)),
+
+	return [str(round(code_section_data_entropy, 2)), str(round(entire_pe_data_entropy, 2)),
 			str(round(overlay_data_entropy, 2)), str(float(len(longest_ascii_string))),
 			str(round(longest_ascii_string_entropy, 2))]
 
