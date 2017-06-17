@@ -2,7 +2,7 @@
 This is project i started for educational purpouse mostly, to dive into machine learning. I will try to frequently update the project with faster and more accurate features and algorithms to be able to identify different packers.
 The machine learning algorithm that is currently used is the kNN implementation from [Dr. Jason Brownlee tutorial](http://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/)
 
-Right now i created my own features PE features collection script that collects the following features out of PE files:
+Right now i use my own PE features collection script that collects the following features out of PE files:
 
 ```
 Code section entropy
